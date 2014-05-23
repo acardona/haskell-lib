@@ -31,7 +31,11 @@ $ cd CATMAID
 
 $ ghc -O2 spectral-graph-analysis.hs
 
-$ ./spectral-graph-analysis /path/to/adjacency-matrix.csv
+$ ./spectral-graph-analysis view /path/to/adjacency-matrix.csv
+
+or
+
+$ ./spectral-graph-analysis filename.pdf /path/to/adjacency-matrix.csv
 
 
 The adjacency matrix is expected to be a square matrix similar to:

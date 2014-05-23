@@ -6,7 +6,7 @@ import qualified Analysis.Graph.Plot as P
 import qualified Analysis.Graph.CATMAID as CM
 
 main = do
-    [path] <- getArgs
+    [mode, path] <- getArgs
     csv <- TIO.readFile path
     -- putStrLn $ show $ run $ snd $ parse csv
     let (labels, adjM) = CM.parse csv
@@ -19,6 +19,7 @@ main = do
                          "Spectral Graph Analysis"
                          (printf "1st eigenvalue (%.2f)" firstEigenValue)
                          "Signal flow"
-      in P.view graph
-      --in P.write "graph.pdf" (512, 512) graph
+      in case mode of
+        "view" -> P.view graph
+        "PDF"  -> P.write "graph.pdf" (512, 512) graph
 
