@@ -38,6 +38,9 @@ or
 $ ./spectral-graph-analysis filename.pdf /path/to/adjacency-matrix.csv
 
 
+In the case of 'view', notice that the window that opens is resizable, and automatically resizes the graph within.
+
+
 The adjacency matrix is expected to be a square matrix similar to:
 
 <pre>
