@@ -19,6 +19,6 @@ parse csv = (trimmedLabels, matrix)
                              . T.split (== ','))
                             $ T.lines csv
           -- remove the starting and ending quotes, and crop at one char before the sharp
-          trimmedLabels = map (init . takeWhile ('#' /=) . drop 1 . init) labels
+          trimmedLabels = map (init . takeWhile ('#' /=) . drop 1) labels
           matrix = fromLists $ map (map read) rows
 
