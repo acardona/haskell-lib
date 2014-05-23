@@ -13,10 +13,12 @@ import Data.Packed.Matrix (Matrix, fromLists)
 -- NOTE: currently fragile, can't parse when neuron names contain ',' (comma) characters.
 -- TODO: should use the Cassava Csv parsing library instead.
 parse :: T.Text -> ([String], Matrix Double)
-parse csv = (labels, matrix)
+parse csv = (trimmedLabels, matrix)
     where labels:rows = map (  map T.unpack
                              . drop 1
                              . T.split (== ','))
                             $ T.lines csv
+          -- remove the starting and ending quotes, and crop at one char before the sharp
+          trimmedLabels = map (init . takeWhile ('#' /=) . drop 1 . init) labels
           matrix = fromLists $ map (map read) rows
 
