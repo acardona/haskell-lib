@@ -30,7 +30,7 @@ create vx vy labels title xLabel yLabel =  do
         --setRange XAxis Lower Linear (min vx) (max vx)
         --setRange YAxis Lower Linear (min vy) (max vy)
         setDataset (vx, [point vy (Bullet, red)]) -- Circle, Box, Diamond, Asterisk, Triangle, Bullet, Top, Bot
-        let annotation (x, y, label) = text (x, -y)
+        let annotation (x, y, label) = text (x, y)
                                             (do
                                              setText label
                                              setFontSize 8)
