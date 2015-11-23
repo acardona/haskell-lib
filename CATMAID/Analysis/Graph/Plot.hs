@@ -45,6 +45,8 @@ view graph = display $ render graph
 -- Write a plot to a file as PDF
 write filepath graph = writeFigure PDF filepath graph
 
+writeSVG filepath graph = writeFigure SVG filepath graph
+
 
 -- Create a window and show in it a renderable element like a Plot
 -- Mostly copied from https://github.com/amcphail/plot/blob/master/examples/Test4.hs

@@ -22,4 +22,6 @@ main = do
       in case mode of
         "view" -> P.view graph
         "PDF"  -> P.write "graph.pdf" (512, 512) graph
+        "SVG"  -> P.writeSVG "graph.svg" (512, 512) graph
+        _      -> putStrLn "Run like:\n./spectral-graph-analysis <view|SVG|PDF> </path/to/adjacency-matrix.csv>"
 

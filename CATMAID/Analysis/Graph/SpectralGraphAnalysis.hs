@@ -6,6 +6,7 @@ import Numeric.LinearAlgebra.LAPACK (eigS')
 import Numeric.LinearAlgebra.Util (diagl)
 import Numeric.Container ((<>))
 import Data.Packed.Vector (Vector, foldVector, toList)
+--import Numeric.FastMath --makes no difference, all math is done by LAPACK
 
 -- The signal flow and the graph Laplacian of the symmetrized adjacency matrix are implemented as defined in the supplemental material of the paper:
 -- Varshney LR, Chen BL, Paniagua E, Hall DH, Chklovskii DB (2011) Structural Properties of the Caenorhabditis elegans Neuronal Network. PLoS Comput Biol 7(2): e1001066. doi:10.1371/journal.pcbi.1001066
